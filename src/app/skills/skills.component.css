@@ -1,0 +1,17 @@
+.progress-bar{
+display: flex;
+align-content: center;
+justify-content: right;
+width: 80%;
+margin-right: 5%;
+margin-top: auto;
+position: relative;
+}
+
+.skill{
+  margin: .75%;
+}
+
+.example-container{
+  height: 90vh;
+}

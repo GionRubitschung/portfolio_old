@@ -1,0 +1,24 @@
+<div *ngIf="SKILLS?.length > 0; else noItem">
+  <div *ngFor="let skill of SKILLS">
+    <div class="skill">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{skill.skillname}}
+            </mat-panel-title>
+            <mat-progress-bar class="progress-bar" [value]="skill.skillwert"></mat-progress-bar>
+            <mat-panel-description>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div>{{skill.skillBeschreibung}}</div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>
+
+<ng-template #noItem>
+  <div>Keine Skills!</div>
+</ng-template>
+
+<!-- Gottschall Beat -> Links welche Rolf Bollhalder gegeben hat funktionieren nicht! (beide links) -->
