@@ -1,8 +1,8 @@
+import { IntCvSkill } from './../models/cvSkill';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { IntCvSkill } from '../models/cvSkill';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +34,10 @@ export class CvServiceService {
   skillFiltern(filterWert: string) {
     this.skillFilter = filterWert;
     return this.skillFilter;
+  }
+
+  addSkill(cvSkill: IntCvSkill) {
+    this.cvSkillCollection.add(cvSkill);
   }
 
 }

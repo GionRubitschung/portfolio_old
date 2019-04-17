@@ -1,9 +1,11 @@
-import { MatButtonModule, MatCheckboxModule, MatExpansionModule, MatFormFieldModule, MatProgressBarModule,  } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatExpansionModule, MatProgressBarModule,  } from '@angular/material';
 import { NgModule } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -15,7 +17,8 @@ import {MatCardModule} from '@angular/material/card';
     MatProgressBarModule,
     MatSidenavModule,
     MatButtonToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule
   ],
   exports: [
     MatButtonModule,
@@ -26,7 +29,8 @@ import {MatCardModule} from '@angular/material/card';
     MatProgressBarModule,
     MatSidenavModule,
     MatButtonToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule
   ]
 })
 

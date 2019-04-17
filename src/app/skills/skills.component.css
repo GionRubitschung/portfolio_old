@@ -12,6 +12,10 @@ position: relative;
   margin: .75%;
 }
 
+.form{
+  margin: .75%;
+}
+
 .example-container{
   height: 90vh;
 }
