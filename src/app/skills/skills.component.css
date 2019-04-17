@@ -15,3 +15,17 @@ position: relative;
 .example-container{
   height: 90vh;
 }
+
+.side-nav{
+  width: 10vw;
+}
+
+.filter{
+  width: 8vw;
+  margin: 1vh .9vw;
+}
+
+.mat-card{
+  width: 6vw;
+  margin: 1vh .9vw;
+}

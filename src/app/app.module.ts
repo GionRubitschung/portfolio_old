@@ -11,16 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SkillsComponent } from './skills/skills.component';
 import { MenubarComponent } from './menubar/menubar.component';
-import { SkillsMainContentComponent } from './skills-main-content/skills-main-content.component';
-import { SkillsDrawerContentComponent } from './skills-drawer-content/skills-drawer-content.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SkillsComponent,
     MenubarComponent,
-    SkillsMainContentComponent,
-    SkillsDrawerContentComponent
+    FilterPipe
   ],
   imports: [
     BrowserModule,

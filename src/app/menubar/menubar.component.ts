@@ -1,5 +1,6 @@
-import { MaterialModule } from './../material';
+import { NavigationServiceService } from './../service/navigation-service.service';
 import { Component, OnInit } from '@angular/core';
+import { NavigationInterface } from '../service/interfaces/navigation-interface';
 
 @Component({
   selector: 'app-menubar',
@@ -8,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenubarComponent implements OnInit {
 
-  constructor() { }
+  LINKS: NavigationInterface[];
+
+  constructor(private linkService: NavigationServiceService) { }
 
   ngOnInit() {
+    this.linkService.getLinks().subscribe(link => {
+      this.LINKS = link;
+    });
+  }
+
+  reloadPage() {
+    // location.reload();
+  }
+
+  routerLink() {
+    this.linkService.getLinks().subscribe(link => {
+      this.LINKS = link;
+    });
   }
 
 }

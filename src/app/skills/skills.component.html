@@ -1,8 +1,34 @@
 <mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>
-      <app-skills-drawer-content></app-skills-drawer-content>
+    <mat-drawer mode="side" opened class="side-nav">
+        <mat-card class="mat-card">Kategorien:</mat-card>
+        <div *ngFor="let skill of SKILLS">
+          <button mat-button class="filter">
+            <div (click)="filtereSkills(filter.textContent)" #filter>{{skill.skillGruppe}}</div>
+          </button>
+        </div>
     </mat-drawer>
     <mat-drawer-content>
-      <app-skills-main-content></app-skills-main-content>
+      <div *ngIf="SKILLS?.length > 0; else noItem">
+        <div *ngFor="let skill of SKILLS | filter:skillGruppe">
+          <div class="skill">
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>{{skill.skillname}}
+                  </mat-panel-title>
+                  <mat-progress-bar class="progress-bar" [value]="skill.skillwert"></mat-progress-bar>
+                  <mat-panel-description>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div>{{skill.skillBeschreibung}}</div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #noItem>
+        <div>Keine Skills!</div>
+      </ng-template>
     </mat-drawer-content>
 </mat-drawer-container>

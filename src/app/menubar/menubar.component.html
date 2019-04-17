@@ -1,5 +1,7 @@
 <mat-toolbar color="primary" class="menubar">
   <mat-toolbar-row>
-    <span>Custom Toolbar</span>
+    <div *ngFor="let link of LINKS">
+        <button mat-button><a routerLink="{{link.linkUrl}}">{{link.linkName}}</a></button>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>

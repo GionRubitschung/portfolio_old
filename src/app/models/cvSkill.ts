@@ -3,4 +3,5 @@ export interface IntCvSkill {
   skillname?: string;
   skillwert?: number;
   skillBeschreibung?: string;
+  skillGruppe?: string;
 }

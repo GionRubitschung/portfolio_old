@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IntCvSkill } from '../models/cvSkill';
@@ -11,6 +11,8 @@ import { IntCvSkill } from '../models/cvSkill';
 export class CvServiceService {
   cvSkillCollection: AngularFirestoreCollection<IntCvSkill>;
   cvSkill: Observable<IntCvSkill[]>;
+
+  skillFilter: string;
 
   constructor(public afs: AngularFirestore) {
 
@@ -25,11 +27,13 @@ export class CvServiceService {
     }));
   }
 
-  getItems() {
+  getSkills() {
     return this.cvSkill;
   }
 
-  addItem(skill: IntCvSkill) {
-    this.cvSkillCollection.add(skill);
+  skillFiltern(filterWert: string) {
+    this.skillFilter = filterWert;
+    return this.skillFilter;
   }
+
 }
