@@ -1,7 +1,7 @@
 import { IntCvSkill } from './../models/cvSkill';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CvServiceService } from '../service/cv-service.service';
-import { UniquePipe } from 'ngx-pipes/src/pipes/array/unique';
+// import { UniquePipe } from 'ngx-pipes/src/pipes/array/unique';
 
 @Component({
   selector: 'app-skills',
@@ -21,8 +21,8 @@ export class SkillsComponent implements OnInit, OnDestroy {
 
   filterWert = 'Entwicklung';
 
-  constructor(private skillService: CvServiceService, private uniquePipe: UniquePipe) {
-    this.uniquePipe.transform(this.SKILLS);
+  constructor(private skillService: CvServiceService, /*private uniquePipe: UniquePipe*/) {
+    // this.uniquePipe.transform(this.SKILLS);
   }
 
   ngOnInit() {

@@ -14,8 +14,9 @@ export class CvServiceService {
 
   skillFilter: string;
 
-  constructor(public afs: AngularFirestore) {
+  constructor(public afs: AngularFirestore) { }
 
+  fetchingData() {
     this.cvSkillCollection = this.afs.collection('cv-skill');
 
     this.cvSkill = this.cvSkillCollection.snapshotChanges().pipe(map(changes => {
@@ -28,6 +29,7 @@ export class CvServiceService {
   }
 
   getSkills() {
+    this.fetchingData();
     return this.cvSkill;
   }
 

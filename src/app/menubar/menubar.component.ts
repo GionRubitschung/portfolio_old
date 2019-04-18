@@ -19,10 +19,6 @@ export class MenubarComponent implements OnInit {
     });
   }
 
-  reloadPage() {
-    // location.reload();
-  }
-
   routerLink() {
     this.linkService.getLinks().subscribe(link => {
       this.LINKS = link;
