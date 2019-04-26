@@ -1,7 +1,7 @@
+import { SkillGruppe } from './../service/interfaces/skillGruppe';
 import { IntCvSkill } from './../models/cvSkill';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CvServiceService } from '../service/cv-service.service';
-// import { UniquePipe } from 'ngx-pipes/src/pipes/array/unique';
 
 @Component({
   selector: 'app-skills',
@@ -10,7 +10,9 @@ import { CvServiceService } from '../service/cv-service.service';
 })
 export class SkillsComponent implements OnInit, OnDestroy {
 
-  SKILLS: IntCvSkill[];
+  SKILLS: IntCvSkill[] = [];
+
+  skillGruppen: SkillGruppe[] = [];
 
   skill: IntCvSkill = {
     skillBeschreibung: '',
@@ -21,14 +23,17 @@ export class SkillsComponent implements OnInit, OnDestroy {
 
   filterWert = 'Entwicklung';
 
-  constructor(private skillService: CvServiceService, /*private uniquePipe: UniquePipe*/) {
-    // this.uniquePipe.transform(this.SKILLS);
+  constructor(private skillService: CvServiceService) {
   }
 
   ngOnInit() {
     this.skillService.getSkills().subscribe(cvSkill => {
       this.SKILLS = cvSkill;
     });
+
+    this.skillService.getSkillGruppen().subscribe(skillGruppe => {
+      this.skillGruppen = skillGruppe;
+    })
   }
 
   ngOnDestroy() {

@@ -1,9 +1,9 @@
 <mat-drawer-container class="example-container" #dataCheck>
     <mat-drawer mode="side" opened class="side-nav">
         <!-- <mat-card class="mat-card">Kategorien:</mat-card> -->
-        <div *ngFor="let skill of SKILLS | unique">
+        <div *ngFor="let skillGruppe of skillGruppen | unique:'skillGruppe'">
           <button mat-button class="filter">
-              <div (click)="filtereSkills(filter.textContent)" #filter>{{skill.skillGruppe}}</div>
+              <div (click)="filtereSkills(filter.textContent)" #filter>{{skillGruppe.skillGruppe}}</div>
             </button>
           </div>
     </mat-drawer>

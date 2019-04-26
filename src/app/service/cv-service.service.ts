@@ -1,3 +1,4 @@
+import { SkillGruppe } from './interfaces/skillGruppe';
 import { IntCvSkill } from './../models/cvSkill';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
@@ -11,6 +12,9 @@ import { map } from 'rxjs/operators';
 export class CvServiceService {
   cvSkillCollection: AngularFirestoreCollection<IntCvSkill>;
   cvSkill: Observable<IntCvSkill[]>;
+
+  skillGruppeCollection: AngularFirestoreCollection<SkillGruppe>;
+  skillGruppe: Observable<SkillGruppe[]>;
 
   skillFilter: string;
 
@@ -26,11 +30,20 @@ export class CvServiceService {
         return data;
       });
     }));
+
+    this.skillGruppeCollection = this.afs.collection('cv-skill');
+
+    this.skillGruppe = this.skillGruppeCollection.valueChanges();
   }
 
   getSkills() {
     this.fetchingData();
     return this.cvSkill;
+  }
+
+  getSkillGruppen() {
+    this.fetchingData();
+    return this.skillGruppe;
   }
 
   skillFiltern(filterWert: string) {

@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class="menubar">
   <mat-toolbar-row>
     <div *ngFor="let link of LINKS">
-        <button mat-button><a [routerLink]="link.linkUrl" class="link">{{link.linkName}}</a></button>
+        <button mat-button [routerLink]="link.linkUrl"><a class="link">{{link.linkName}}</a></button>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
