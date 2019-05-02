@@ -1,0 +1,13 @@
+.container-infos {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.ueber-mich {
+  flex: 2;
+}
+
+.lebenslauf {
+  flex: 1;
+}

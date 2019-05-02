@@ -1,0 +1,12 @@
+<mat-drawer-container>
+  <mat-drawer-content>
+    <form class="form" (ngSubmit)="login()">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Login</mat-label>
+          <input matInput placeholder="Passwort" type="password" [(ngModel)]="userPassword" name="userPassword">
+        </mat-form-field>
+
+        <button type="submit" mat-flat-button color="primary">Login</button>
+    </form>
+</mat-drawer-content>
+</mat-drawer-container>

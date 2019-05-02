@@ -1,6 +1,6 @@
 import { SkillGruppe } from './../service/interfaces/skillGruppe';
 import { IntCvSkill } from './../models/cvSkill';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CvServiceService } from '../service/cv-service.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { CvServiceService } from '../service/cv-service.service';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css'],
 })
-export class SkillsComponent implements OnInit, OnDestroy {
+export class SkillsComponent implements OnInit {
 
   SKILLS: IntCvSkill[] = [];
 
@@ -33,10 +33,7 @@ export class SkillsComponent implements OnInit, OnDestroy {
 
     this.skillService.getSkillGruppen().subscribe(skillGruppe => {
       this.skillGruppen = skillGruppe;
-    })
-  }
-
-  ngOnDestroy() {
+    });
   }
 
   filtereSkills(skillWert: string) {

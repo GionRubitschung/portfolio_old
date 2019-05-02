@@ -16,7 +16,12 @@
                 <mat-expansion-panel-header>
                   <mat-panel-title>{{skill.skillname}}
                   </mat-panel-title>
-                  <mat-progress-bar class="progress-bar" [value]="skill.skillwert"></mat-progress-bar>
+                  <mat-progress-bar
+                  class="progress-bar"
+                  [value]="skill.skillwert"
+                  [color]="'accent'"
+                  [mode]="'buffer'"
+                  ></mat-progress-bar>
                   <mat-panel-description>
                   </mat-panel-description>
                 </mat-expansion-panel-header>

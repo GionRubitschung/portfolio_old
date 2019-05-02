@@ -3,5 +3,6 @@
     <div *ngFor="let link of LINKS">
         <button mat-button [routerLink]="link.linkUrl"><a class="link">{{link.linkName}}</a></button>
     </div>
+    <button mat-button [routerLink]="'login'" class="login-menubar">Login</button>
   </mat-toolbar-row>
 </mat-toolbar>
