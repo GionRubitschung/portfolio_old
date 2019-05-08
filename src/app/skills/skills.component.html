@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container" #dataCheck>
+<mat-drawer-container class="example-container">
     <mat-drawer mode="side" opened class="side-nav">
         <!-- <mat-card class="mat-card">Kategorien:</mat-card> -->
         <div *ngFor="let skillGruppe of skillGruppen | unique:'skillGruppe'">
@@ -31,31 +31,6 @@
           </div>
         </div>
       </div>
-
-      <form class="form" (ngSubmit)="addSkill()">
-        <mat-form-field appearance="outline" class="form-field">
-          <mat-label>Skillname</mat-label>
-          <input matInput placeholder="Skillname" [(ngModel)]="skill.skillname" name="skillName">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="form-field">
-          <mat-label>Skillbeschreibung</mat-label>
-          <input matInput placeholder="Skillbeschreibung" [(ngModel)]="skill.skillBeschreibung" name="skillBeschreibung">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="form-field">
-          <mat-label>Skillkategorie</mat-label>
-          <input matInput placeholder="Skillkategorie" [(ngModel)]="skill.skillGruppe" name="skillGruppe">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="form-field">
-          <mat-label>Skillwert</mat-label>
-          <input matInput placeholder="Skillwert" [(ngModel)]="skill.skillwert" name="skillWert">
-        </mat-form-field>
-
-        <button type="submit" mat-flat-button color="primary">Hinzufügen</button>
-      </form>
-
       <ng-template #noItem>
         <div>Keine Skills!</div>
       </ng-template>

@@ -1,3 +1,56 @@
-<p>
-  skills-add works!
-</p>
+<mat-drawer-container class="example-container">
+    <mat-drawer-content>
+      <div *ngIf="SKILLS?.length > 0; else noItem">
+        <div *ngFor="let skill of SKILLS">
+          <div class="skill">
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>{{skill.skillname}}
+                  </mat-panel-title>
+                  <mat-progress-bar
+                  class="progress-bar"
+                  [value]="skill.skillwert"
+                  [color]="'accent'"
+                  [mode]="'buffer'"
+                  ></mat-progress-bar>
+                  <mat-panel-description>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div>{{skill.skillBeschreibung}}</div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+      </div>
+
+      <form class="form" (ngSubmit)="addSkill()">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Skillname</mat-label>
+          <input matInput placeholder="Skillname" [(ngModel)]="skill.skillname" name="skillName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Skillbeschreibung</mat-label>
+          <input matInput placeholder="Skillbeschreibung" [(ngModel)]="skill.skillBeschreibung" name="skillBeschreibung">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Skillkategorie</mat-label>
+          <input matInput placeholder="Skillkategorie" [(ngModel)]="skill.skillGruppe" name="skillGruppe">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Skillwert</mat-label>
+          <input matInput placeholder="Skillwert" [(ngModel)]="skill.skillwert" name="skillWert">
+        </mat-form-field>
+
+        <button type="submit" mat-flat-button color="primary">Hinzufügen</button>
+      </form>
+
+      <ng-template #noItem>
+        <div>Keine Skills!</div>
+      </ng-template>
+
+    </mat-drawer-content>
+</mat-drawer-container>

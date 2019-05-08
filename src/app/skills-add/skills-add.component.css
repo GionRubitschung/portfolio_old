@@ -1,0 +1,35 @@
+.progress-bar {
+  display: flex;
+  align-content: center;
+  justify-content: right;
+  width: 80%;
+  margin-right: 5%;
+  margin-top: auto;
+  position: relative;
+}
+
+.skill {
+  margin: 0.75%;
+}
+
+.form {
+  margin: 0.75%;
+}
+
+.example-container {
+  height: 91.5vh;
+}
+
+.side-nav {
+  width: 10vw;
+}
+
+.filter {
+  width: 8vw;
+  margin: 1vh 0.9vw;
+}
+
+.mat-card {
+  width: 6vw;
+  margin: 1vh 0.9vw;
+}

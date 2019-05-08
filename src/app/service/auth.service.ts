@@ -27,7 +27,7 @@ export class AuthService {
         await  this.afAuth.auth.signInWithEmailAndPassword('gion.rubitschung@swisscom.com', password);
         this.router.navigate(['admin']);
     } catch (e) {
-        alert('Error!'  +  e.message);
+        alert('Ooops, something went wrong! ' + e);
     }
   }
 

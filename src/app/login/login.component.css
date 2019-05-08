@@ -1,0 +1,26 @@
+.login {
+  background-color: #424242;
+  display: flex;
+  flex-direction: column;
+  margin: 12.5% auto;
+  width: 25%;
+  padding: 1%;
+  border-radius: 4px;
+}
+
+.login-input {
+  margin-top: 5%;
+}
+
+mat-toolbar, button, input {
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+p {
+  margin: auto;
+}
+
+button {
+  padding: 2%;
+}

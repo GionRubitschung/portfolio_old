@@ -16,7 +16,12 @@ export class CvServiceService {
   skillGruppeCollection: AngularFirestoreCollection<SkillGruppe>;
   skillGruppe: Observable<SkillGruppe[]>;
 
+  skillAdminCollection: AngularFirestoreCollection<IntCvSkill>;
+  skillAdmin: Observable<IntCvSkill[]>;
+
   skillFilter: string;
+
+  adminFilter: number;
 
   constructor(public afs: AngularFirestore) { }
 
@@ -48,11 +53,40 @@ export class CvServiceService {
 
   skillFiltern(filterWert: string) {
     this.skillFilter = filterWert;
-    return this.skillFilter;
+    // return this.skillFilter;
   }
 
   addSkill(cvSkill: IntCvSkill) {
     this.cvSkillCollection.add(cvSkill);
   }
+
+
+  // ADMIN ################ ADMIN
+
+  fetchingAdminData() {
+    this.skillAdminCollection = this.afs.collection('cv-skill', ref => ref.limit(this.adminFilter));
+
+    this.skillAdmin = this.skillAdminCollection.snapshotChanges().pipe(map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as IntCvSkill;
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    }));
+
+    this.cvSkillCollection = this.afs.collection('cv-skill');
+
+    this.cvSkill = this.cvSkillCollection.valueChanges();
+  }
+
+  getAdminSKills() {
+    this.fetchingAdminData();
+    return this.skillAdmin;
+  }
+
+  filtereAdminSkills(filterwert: number) {
+    this.adminFilter = filterwert;
+  }
+
 
 }

@@ -1,8 +1,12 @@
 <mat-toolbar color="primary" class="menubar">
   <mat-toolbar-row>
     <div *ngFor="let link of LINKS">
-        <button mat-button [routerLink]="link.linkUrl"><a class="link">{{link.linkName}}</a></button>
+        <button mat-button [routerLink]="link.linkUrl" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">{{link.linkName}}</button>
     </div>
-    <button mat-button [routerLink]="'login'" class="login-menubar">Login</button>
+    <button mat-button class="login-menubar" [matMenuTriggerFor]="admin">Admin bereich</button>
+    <mat-menu #admin="matMenu">
+      <button mat-menu-item [routerLink]="'admin'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">Home</button>
+      <button mat-menu-item [routerLink]="'admin/skills-add'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">Skills hinzufügen</button>
+    </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>

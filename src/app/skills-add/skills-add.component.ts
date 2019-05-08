@@ -1,3 +1,5 @@
+import { IntCvSkill } from './../models/cvSkill';
+import { CvServiceService } from './../service/cv-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsAddComponent implements OnInit {
 
-  constructor() { }
+  SKILLS: IntCvSkill[] = [];
+
+  skill: IntCvSkill = {
+    skillBeschreibung: '',
+    skillname: '',
+    skillGruppe: '',
+    skillwert: null,
+  };
+
+  constructor(private skillService: CvServiceService) { }
 
   ngOnInit() {
+      this.skillService.getSkills().subscribe(cvSkill => {
+        this.SKILLS = cvSkill;
+      });
+  }
+
+  addSkill() {
+    this.skillService.addSkill(this.skill);
+    this.skill.skillBeschreibung = '';
+    this.skill.skillGruppe = '';
+    this.skill.skillname = '';
+    this.skill.skillwert = null;
   }
 
 }

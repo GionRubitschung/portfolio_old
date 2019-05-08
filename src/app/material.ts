@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatInputModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatPaginatorModule
   ],
   exports: [
     MatButtonModule,
@@ -36,7 +38,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatInputModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatPaginatorModule
   ]
 })
 
