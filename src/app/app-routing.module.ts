@@ -1,3 +1,4 @@
+import { UploaderComponent } from './uploader/uploader.component';
 import { SkillsAddComponent } from './skills-add/skills-add.component';
 import { AdministratorComponent } from './administrator/administrator.component';
 import { UnterlagenComponent } from './unterlagen/unterlagen.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'ueber-mich', component: InfosComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdministratorComponent, canActivate: [AuthGuard]},
-  {path: 'admin/skills-add', component: SkillsAddComponent, canActivate: [AuthGuard]}
+  {path: 'admin/skills-add', component: SkillsAddComponent, canActivate: [AuthGuard]},
+  {path: 'admin/upload-unterlagen', component: UploaderComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

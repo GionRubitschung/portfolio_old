@@ -17,5 +17,14 @@
   >
     Skills hinzufügen
   </button>
+  <button
+    mat-flat-button
+    [routerLink]="'/admin/upload-unterlagen'"
+    [routerLinkActive]="'active'"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="button-admin"
+  >
+    Bewrbungunsterlagen hochladen
+  </button>
   <button mat-flat-button (click)="logout()" class="button-admin">Ausloggen</button>
 </mat-toolbar>

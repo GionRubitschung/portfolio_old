@@ -27,6 +27,10 @@ import { AdministratorComponent } from './administrator/administrator.component'
 import { SkillsAddComponent } from './skills-add/skills-add.component';
 import { AdministratorMenubarComponent } from './administrator-menubar/administrator-menubar.component';
 import { DataLoaderComponent } from './data-loader/data-loader.component';
+import { DropzoneDirective } from './dropzone.directive';
+import { UploaderComponent } from './uploader/uploader.component';
+import { UploadTaskComponent } from './upload-task/upload-task.component';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,9 @@ import { DataLoaderComponent } from './data-loader/data-loader.component';
     SkillsAddComponent,
     AdministratorMenubarComponent,
     DataLoaderComponent,
+    DropzoneDirective,
+    UploaderComponent,
+    UploadTaskComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,11 +63,13 @@ import { DataLoaderComponent } from './data-loader/data-loader.component';
     NgPipesModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [
     CvServiceService,
     AuthGuard,
-    AuthService
+    AuthService,
+    AngularFireStorageModule
   ],
   bootstrap: [AppComponent]
 })
