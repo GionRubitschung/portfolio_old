@@ -1,0 +1,21 @@
+<mat-toolbar class="menubar">
+  <button
+    mat-flat-button
+    [routerLink]="'/admin'"
+    [routerLinkActive]="'active'"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="button-admin"
+  >
+    Admin home
+  </button>
+  <button
+    mat-flat-button
+    [routerLink]="'/admin/skills-add'"
+    [routerLinkActive]="'active'"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="button-admin"
+  >
+    Skills hinzufügen
+  </button>
+  <button mat-flat-button (click)="logout()" class="button-admin">Ausloggen</button>
+</mat-toolbar>

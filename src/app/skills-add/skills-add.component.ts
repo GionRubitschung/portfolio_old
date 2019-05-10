@@ -9,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsAddComponent implements OnInit {
 
+
   SKILLS: IntCvSkill[] = [];
+
+  skillLength: IntCvSkill[] = [];
 
   skill: IntCvSkill = {
     skillBeschreibung: '',
@@ -18,12 +21,24 @@ export class SkillsAddComponent implements OnInit {
     skillwert: null,
   };
 
+  skillFilter = 5;
+
   constructor(private skillService: CvServiceService) { }
 
   ngOnInit() {
-      this.skillService.getSkills().subscribe(cvSkill => {
+      this.skillService.getAdminSKills(this.skillFilter).subscribe(cvSkill => {
         this.SKILLS = cvSkill;
       });
+
+      this.skillService.getSkills().subscribe(cvSkill => {
+        this.skillLength = cvSkill;
+      });
+  }
+
+  filtereSkills() {
+    this.skillService.getAdminSKills(this.skillFilter).subscribe(cvSkill => {
+      this.SKILLS = cvSkill;
+    });
   }
 
   addSkill() {

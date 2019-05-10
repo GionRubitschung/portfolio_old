@@ -3,7 +3,7 @@ import { IntCvSkill } from './../models/cvSkill';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +18,6 @@ export class CvServiceService {
 
   skillAdminCollection: AngularFirestoreCollection<IntCvSkill>;
   skillAdmin: Observable<IntCvSkill[]>;
-
-  skillFilter: string;
 
   adminFilter: number;
 
@@ -51,11 +49,6 @@ export class CvServiceService {
     return this.skillGruppe;
   }
 
-  skillFiltern(filterWert: string) {
-    this.skillFilter = filterWert;
-    // return this.skillFilter;
-  }
-
   addSkill(cvSkill: IntCvSkill) {
     this.cvSkillCollection.add(cvSkill);
   }
@@ -63,8 +56,8 @@ export class CvServiceService {
 
   // ADMIN ################ ADMIN
 
-  fetchingAdminData() {
-    this.skillAdminCollection = this.afs.collection('cv-skill', ref => ref.limit(this.adminFilter));
+  fetchingAdminData(filterWert: number) {
+    this.skillAdminCollection = this.afs.collection('cv-skill', ref => ref.limit(filterWert));
 
     this.skillAdmin = this.skillAdminCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
@@ -79,8 +72,8 @@ export class CvServiceService {
     this.cvSkill = this.cvSkillCollection.valueChanges();
   }
 
-  getAdminSKills() {
-    this.fetchingAdminData();
+  getAdminSKills(filterwert: number) {
+    this.fetchingAdminData(filterwert);
     return this.skillAdmin;
   }
 

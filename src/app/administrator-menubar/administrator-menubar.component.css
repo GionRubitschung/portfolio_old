@@ -1,0 +1,15 @@
+.menubar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgba(123, 31, 162, 0.8);
+}
+
+.button-admin.active {
+  background-color: #69F0AE;
+  color: black;
+}
+
+.button-admin {
+  background-color: rgba(123, 31, 162, 0);
+}

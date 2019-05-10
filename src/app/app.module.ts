@@ -25,6 +25,8 @@ import { UeberMichComponent } from './infos/ueber-mich/ueber-mich.component';
 import { LoginComponent } from './login/login.component';
 import { AdministratorComponent } from './administrator/administrator.component';
 import { SkillsAddComponent } from './skills-add/skills-add.component';
+import { AdministratorMenubarComponent } from './administrator-menubar/administrator-menubar.component';
+import { DataLoaderComponent } from './data-loader/data-loader.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { SkillsAddComponent } from './skills-add/skills-add.component';
     UeberMichComponent,
     LoginComponent,
     AdministratorComponent,
-    SkillsAddComponent
+    SkillsAddComponent,
+    AdministratorMenubarComponent,
+    DataLoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,7 @@ import { SkillsAddComponent } from './skills-add/skills-add.component';
     MaterialModule,
     NgPipesModule,
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [
     CvServiceService,

@@ -14,13 +14,6 @@ export class SkillsComponent implements OnInit {
 
   skillGruppen: SkillGruppe[] = [];
 
-  // skill: IntCvSkill = {
-  //   skillBeschreibung: '',
-  //   skillname: '',
-  //   skillGruppe: '',
-  //   skillwert: null,
-  // };
-
   filterWert = 'Entwicklung';
 
   constructor(private skillService: CvServiceService) {
@@ -39,13 +32,5 @@ export class SkillsComponent implements OnInit {
   filtereSkills(skillWert: string) {
     this.filterWert = skillWert;
   }
-
-  // addSkill() {
-  //   this.skillService.addSkill(this.skill);
-  //   this.skill.skillBeschreibung = '';
-  //   this.skill.skillGruppe = '';
-  //   this.skill.skillname = '';
-  //   this.skill.skillwert = null;
-  // }
 
 }
