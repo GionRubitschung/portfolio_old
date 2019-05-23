@@ -1,5 +1,5 @@
-import { AuthService } from './../service/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/authentification/auth.service';
 
 @Component({
   selector: 'app-administrator-menubar',

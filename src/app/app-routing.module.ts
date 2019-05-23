@@ -1,14 +1,14 @@
-import { UploaderComponent } from './uploader/uploader.component';
-import { SkillsAddComponent } from './skills-add/skills-add.component';
-import { AdministratorComponent } from './administrator/administrator.component';
-import { UnterlagenComponent } from './unterlagen/unterlagen.component';
-import { SkillsComponent } from './skills/skills.component';
+import { AdministratorComponent } from './admin-bereich/administrator/administrator.component';
+import { HomeComponent } from './content/content-components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { InfosComponent } from './infos/infos.component';
-import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './service/guard/auth.guard';
+import { SkillsComponent } from './content/content-components/skills/skills.component';
+import { UnterlagenComponent } from './content/content-components/unterlagen/unterlagen.component';
+import { InfosComponent } from './content/content-components/infos/infos.component';
+import { LoginComponent } from './authentification/login/login.component';
+import { AuthGuard } from './authentification/guard/auth.guard';
+import { SkillsAddComponent } from './admin-bereich/skills-add/skills-add.component';
+import { UploaderComponent } from './admin-bereich/uploader/uploader.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},

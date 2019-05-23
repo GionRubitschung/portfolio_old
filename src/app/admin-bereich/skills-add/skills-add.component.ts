@@ -1,5 +1,5 @@
-import { IntCvSkill } from './../models/cvSkill';
-import { CvServiceService } from './../service/cv-service.service';
+import { IntCvSkill } from './../../backend/models/cvSkill';
+import { CvServiceService } from './../../backend/service/skills/cv-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

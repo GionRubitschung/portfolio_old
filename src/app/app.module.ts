@@ -1,7 +1,8 @@
-import { AuthService } from './service/auth.service';
-import { AuthGuard } from './service/guard/auth.guard';
+import { HomeComponent } from './content/content-components/home/home.component';
+import { FilterPipe } from './backend/pipes/filter.pipe';
+import { AuthGuard } from './authentification/guard/auth.guard';
+import { AuthService } from './authentification/auth.service';
 import { MaterialModule } from './material';
-import { CvServiceService } from './service/cv-service.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,27 +11,30 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SkillsComponent } from './skills/skills.component';
-import { MenubarComponent } from './menubar/menubar.component';
-import { FilterPipe } from './pipes/filter.pipe';
-import { HomeComponent } from './home/home.component';
-import { UnterlagenComponent } from './unterlagen/unterlagen.component';
 import { NgPipesModule } from 'ngx-pipes';
-import { InfosComponent } from './infos/infos.component';
-import { LebenslaufComponent } from './infos/lebenslauf/lebenslauf.component';
-import { UeberMichComponent } from './infos/ueber-mich/ueber-mich.component';
-import { LoginComponent } from './login/login.component';
-import { AdministratorComponent } from './administrator/administrator.component';
-import { SkillsAddComponent } from './skills-add/skills-add.component';
-import { AdministratorMenubarComponent } from './administrator-menubar/administrator-menubar.component';
-import { DataLoaderComponent } from './data-loader/data-loader.component';
 import { DropzoneDirective } from './dropzone.directive';
-import { UploaderComponent } from './uploader/uploader.component';
-import { UploadTaskComponent } from './upload-task/upload-task.component';
-import { AngularFireStorageModule } from '@angular/fire/storage';
+import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { CvServiceService } from './backend/service/skills/cv-service.service';
+import { SkillTableComponent } from './admin-bereich/skills-add/skill-table/skill-table.component';
+import { UploadTaskComponent } from './admin-bereich/upload-task/upload-task.component';
+import { UploaderComponent } from './admin-bereich/uploader/uploader.component';
+import { DataLoaderComponent } from './content/data-loader/data-loader.component';
+import { SkillsComponent } from './content/content-components/skills/skills.component';
+import { MenubarComponent } from './content/menubar/menubar.component';
+import { UnterlagenComponent } from './content/content-components/unterlagen/unterlagen.component';
+import { InfosComponent } from './content/content-components/infos/infos.component';
+import { LebenslaufComponent } from './content/content-components/infos/lebenslauf/lebenslauf.component';
+import { UeberMichComponent } from './content/content-components/infos/ueber-mich/ueber-mich.component';
+import { LoginComponent } from './authentification/login/login.component';
+import { AdministratorComponent } from './admin-bereich/administrator/administrator.component';
+import { SkillsAddComponent } from './admin-bereich/skills-add/skills-add.component';
+import { AdministratorMenubarComponent } from './admin-bereich/administrator-menubar/administrator-menubar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -51,6 +55,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     DropzoneDirective,
     UploaderComponent,
     UploadTaskComponent,
+    SkillTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     NgPipesModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     CvServiceService,

@@ -1,7 +1,7 @@
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened class="side-nav">
     <!-- <mat-card class="mat-card">Kategorien:</mat-card> -->
-    <div *ngFor="let skillGruppe of skillGruppen | unique: 'skillGruppe'">
+    <div *ngFor="let skillGruppe of skillGruppen | unique:'skillGruppe'">
       <button mat-button class="filter">
         <div (click)="filtereSkills(filter.textContent)" #filter>
           {{ skillGruppe.skillGruppe }}
@@ -11,7 +11,7 @@
   </mat-drawer>
   <mat-drawer-content>
     <div *ngIf="SKILLS?.length > 0; else noItem">
-      <div *ngFor="let skill of SKILLS | filter: 'skillGruppe':filterWert">
+      <div *ngFor="let skill of SKILLS | filter:filterWert:'skillGruppe'">
         <div class="skill">
           <mat-accordion>
             <mat-expansion-panel>

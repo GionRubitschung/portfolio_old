@@ -1,6 +1,6 @@
-import { NavigationServiceService } from './../service/navigation-service.service';
+import { NavigationInterface } from './../../backend/service/interfaces/navigation-interface';
 import { Component, OnInit } from '@angular/core';
-import { NavigationInterface } from '../service/interfaces/navigation-interface';
+import { NavigationServiceService } from 'src/app/backend/service/menubar/navigation-service.service';
 
 @Component({
   selector: 'app-menubar',
@@ -9,7 +9,7 @@ import { NavigationInterface } from '../service/interfaces/navigation-interface'
 })
 export class MenubarComponent implements OnInit {
 
-  LINKS: NavigationInterface[];
+  LINKS: NavigationInterface[] = [];
 
   constructor(private linkService: NavigationServiceService) { }
 

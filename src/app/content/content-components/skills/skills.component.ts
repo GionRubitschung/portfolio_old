@@ -1,7 +1,7 @@
-import { SkillGruppe } from './../service/interfaces/skillGruppe';
-import { IntCvSkill } from './../models/cvSkill';
+import { SkillGruppe } from './../../../backend/service/interfaces/skillGruppe';
+import { IntCvSkill } from './../../../backend/models/cvSkill';
 import { Component, OnInit } from '@angular/core';
-import { CvServiceService } from '../service/cv-service.service';
+import { CvServiceService } from 'src/app/backend/service/skills/cv-service.service';
 
 @Component({
   selector: 'app-skills',

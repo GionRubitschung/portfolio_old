@@ -1,9 +1,9 @@
-import { SkillGruppe } from './interfaces/skillGruppe';
-import { IntCvSkill } from './../models/cvSkill';
+import { SkillGruppe } from './../interfaces/skillGruppe';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { IntCvSkill } from '../../models/cvSkill';
 
 @Injectable({
   providedIn: 'root'

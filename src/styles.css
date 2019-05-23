@@ -7,6 +7,9 @@ body {
 }
 
 .link {
-  color: white;
   text-decoration: none;
+}
+
+* {
+  color: #F6F6F6;
 }

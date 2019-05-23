@@ -1,4 +1,4 @@
-import { NavigationInterface } from './interfaces/navigation-interface';
+import { NavigationInterface } from './../interfaces/navigation-interface';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
