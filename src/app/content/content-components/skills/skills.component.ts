@@ -20,6 +20,15 @@ export class SkillsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getSkills();
+  }
+
+  filtereSkills(skillWert: string) {
+    this.filterWert = skillWert;
+    this.getSkills();
+  }
+
+  getSkills() {
     this.skillService.getSkills().subscribe(cvSkill => {
       this.SKILLS = cvSkill;
     });
@@ -27,10 +36,6 @@ export class SkillsComponent implements OnInit {
     this.skillService.getSkillGruppen().subscribe(skillGruppe => {
       this.skillGruppen = skillGruppe;
     });
-  }
-
-  filtereSkills(skillWert: string) {
-    this.filterWert = skillWert;
   }
 
 }

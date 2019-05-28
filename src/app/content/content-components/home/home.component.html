@@ -1,5 +1,54 @@
-<app-ueber-mich class="uebermich"></app-ueber-mich>
-<app-skills class="skills"></app-skills>
-<section class="bewerbungsunterlagen">
-  <h1>Hier findest du alle meine Bewerbungsunterlagen</h1>
-</section>
+<content class="flex-home">
+  <section class="ueber-mich">
+    <app-ueber-mich></app-ueber-mich>
+    <div class="flex-cv" *ngFor="let data of DATA">
+        <mat-card class="simpson">
+          <p class="main-title">Lebenslauf</p>
+
+          <p class="data">Persönliche Angaben</p>
+          <mat-card-content class="homer">
+            <div class="inside">
+                <div class="info">Name:</div> <div class="info">{{data.Name}}</div>
+            </div>
+            <div class="inside">
+                <div class="info">Adresse Geschäftlich</div> <div class="info">{{data.Adresse.Geschaeftlich.Strasse}}<br>{{data.Adresse.Geschaeftlich.Ort}}</div>
+            </div>
+            <div class="inside">
+                <div class="info">Adresse Privat</div> <div class="info">{{data.Adresse.Privat.Strasse}}<br>{{data.Adresse.Privat.Ort}}</div>
+            </div>
+            <div class="inside">
+              <div class="info email">eMail</div>
+              <div class="info link email"><a href="mailto:gion.rubitschung@swisscom.com">{{data.eMail}}</a></div>
+            </div>
+            <div class="inside">
+              <div class="info">Telefonnummer</div>
+              <div class="info">{{data.Nummer}}</div>
+            </div>
+            <div class="inside">
+              <div class="info">Geburtsdatum</div>
+              <div class="info">{{data.Geburtsdatum}}</div>
+            </div>
+            <div class="inside">
+                <div class="info link" [routerLink]="'/cv'">Zum kompletten Lebenslauf</div>
+                <div class="info link">Lebenslauf herunterladen</div>
+              </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+  </section>
+  <div class="flex2">
+    <section class="bewerbungsunterlagen">
+      <h1>Hier findest du alle meine Bewerbungsunterlagen</h1>
+      <mat-card>
+        <p>
+          Diese Feature wird bald verfügbar sein!
+        </p>
+      </mat-card>
+    </section>
+    <section class="skills">
+      <h1>Meine Skills</h1>
+      <app-skills></app-skills>
+    </section>
+  </div>
+</content>

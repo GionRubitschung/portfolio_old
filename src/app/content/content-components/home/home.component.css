@@ -1,0 +1,80 @@
+.flex-home{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.flex2, .ueber-mich{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 64px);
+  width: 50%;
+}
+
+.bewerbungsunterlagen{
+  margin: 0 .75%;
+}
+
+.flex-cv{
+  margin: .75%;
+}
+
+.main-title{
+  font-size: 150%;
+}
+
+.data{
+  font-size: 120%;
+}
+
+.link{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.homer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info{
+  margin: 1%;
+  width: 48%;
+}
+
+.button-link{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1024px){
+  .flex-home{
+    display: inline;
+  }
+  .flex2, .ueber-mich{
+    display: inline;
+    margin: 0 auto;
+  }
+  .email{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1500px){
+  .flex2{
+    width: 60%;
+  }
+  .ueber-mich{
+    width: 40%;
+  }
+}

@@ -1,12 +1,57 @@
 <mat-toolbar color="primary" class="menubar">
   <mat-toolbar-row>
-    <div *ngFor="let link of LINKS">
-        <button mat-button [routerLink]="link.linkUrl" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">{{link.linkName}}</button>
-    </div>
-    <button mat-button class="login-menubar" [matMenuTriggerFor]="admin">Admin bereich</button>
+    <button
+      mat-button
+      [routerLink]="'home'"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Home
+    </button>
+    <button
+      mat-button
+      [routerLink]="'cv'"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Lebenslauf
+    </button>
+    <button
+      mat-button
+      [routerLink]="'skills'"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Qualifikationen
+    </button>
+    <button
+      mat-button
+      [routerLink]="'bewerbungsunterlagen'"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Bewerbungsunterlagen
+    </button>
+    <button mat-button class="login-menubar" [matMenuTriggerFor]="admin">
+      Admin bereich
+    </button>
     <mat-menu #admin="matMenu">
-      <button mat-menu-item [routerLink]="'admin'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">Home</button>
-      <button mat-menu-item [routerLink]="'admin/skills-add'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">Skills hinzufügen</button>
+      <button
+        mat-menu-item
+        [routerLink]="'admin'"
+        [routerLinkActive]="'active'"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </button>
+      <button
+        mat-menu-item
+        [routerLink]="'admin/skills-add'"
+        [routerLinkActive]="'active'"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Skills hinzufügen
+      </button>
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>

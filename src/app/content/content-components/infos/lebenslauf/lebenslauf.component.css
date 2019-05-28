@@ -1,0 +1,33 @@
+.flex-cv{
+  margin: .75%;
+}
+
+.main-title{
+  font-size: 150%;
+}
+
+.data{
+  font-size: 120%;
+}
+
+.link{
+  cursor: pointer;
+}
+
+.homer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info{
+  margin: 1%;
+  width: 48%;
+}

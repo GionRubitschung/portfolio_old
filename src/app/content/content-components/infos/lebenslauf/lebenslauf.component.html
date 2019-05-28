@@ -1,3 +1,30 @@
-<p>
-  lebenslauf works!
-</p>
+<div class="flex-cv" *ngFor="let data of DATA">
+  <mat-card class="simpson">
+    <p class="main-title">Lebenslauf</p>
+
+    <p class="data">Persönliche Angaben</p>
+    <mat-card-content class="homer">
+      <div class="inside">
+          <div class="info">Name:</div> <div class="info">{{data.Name}}</div>
+      </div>
+      <div class="inside">
+          <div class="info">Adresse Geschäftlich</div> <div class="info">{{data.Adresse.Geschaeftlich.Strasse}}<br>{{data.Adresse.Geschaeftlich.Ort}}</div>
+      </div>
+      <div class="inside">
+          <div class="info">Adresse Privat</div> <div class="info">{{data.Adresse.Privat.Strasse}}<br>{{data.Adresse.Privat.Ort}}</div>
+      </div>
+      <div class="inside">
+        <div class="info">eMail</div>
+        <div class="info link"><a href="mailto:gion.rubitschung@swisscom.com">{{data.eMail}}</a></div>
+      </div>
+      <div class="inside">
+        <div class="info">Telefonnummer</div>
+        <div class="info">{{data.Nummer}}</div>
+      </div>
+      <div class="inside">
+        <div class="info">Geburtsdatum</div>
+        <div class="info">{{data.Geburtsdatum}}</div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

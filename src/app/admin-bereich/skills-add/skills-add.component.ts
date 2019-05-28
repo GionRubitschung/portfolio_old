@@ -49,4 +49,8 @@ export class SkillsAddComponent implements OnInit {
     this.skill.skillwert = null;
   }
 
+  deleteSkill(event, skill){
+    this.skillService.deleteSkill(skill);
+  }
+
 }

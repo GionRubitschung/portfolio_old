@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LebenslaufService } from '../../../../backend/service/lebenslauf/lebenslauf.service';
+import { PersonalData } from '../../../../backend/service/interfaces/personal-data';
 
 @Component({
   selector: 'app-lebenslauf',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LebenslaufComponent implements OnInit {
 
-  constructor() { }
+  DATA: PersonalData[] = [];
+
+  constructor(public dataService: LebenslaufService) { }
 
   ngOnInit() {
+    this.dataService.getData().subscribe(data => {
+      this.DATA = data;
+    });
   }
 
 }

@@ -76,6 +76,7 @@
                 <mat-panel-description> </mat-panel-description>
               </mat-expansion-panel-header>
               <div>{{ skill.skillBeschreibung }}</div>
+              <button mat-button warn (click)="deleteSkill($event, skill)">Löschen</button>
             </mat-expansion-panel>
           </mat-accordion>
         </div>
@@ -86,5 +87,3 @@
     </ng-template>
   </mat-drawer-content>
 </mat-drawer-container>
-
-<app-skill-table></app-skill-table>

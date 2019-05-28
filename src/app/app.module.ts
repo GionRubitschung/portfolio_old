@@ -26,7 +26,6 @@ import { DataLoaderComponent } from './content/data-loader/data-loader.component
 import { SkillsComponent } from './content/content-components/skills/skills.component';
 import { MenubarComponent } from './content/menubar/menubar.component';
 import { UnterlagenComponent } from './content/content-components/unterlagen/unterlagen.component';
-import { InfosComponent } from './content/content-components/infos/infos.component';
 import { LebenslaufComponent } from './content/content-components/infos/lebenslauf/lebenslauf.component';
 import { UeberMichComponent } from './content/content-components/infos/ueber-mich/ueber-mich.component';
 import { LoginComponent } from './authentification/login/login.component';
@@ -44,7 +43,6 @@ import { AdministratorMenubarComponent } from './admin-bereich/administrator-men
     FilterPipe,
     HomeComponent,
     UnterlagenComponent,
-    InfosComponent,
     LebenslaufComponent,
     UeberMichComponent,
     LoginComponent,

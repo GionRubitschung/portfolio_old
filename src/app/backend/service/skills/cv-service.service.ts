@@ -1,6 +1,6 @@
 import { SkillGruppe } from './../interfaces/skillGruppe';
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IntCvSkill } from '../../models/cvSkill';
@@ -12,12 +12,15 @@ import { IntCvSkill } from '../../models/cvSkill';
 export class CvServiceService {
   cvSkillCollection: AngularFirestoreCollection<IntCvSkill>;
   cvSkill: Observable<IntCvSkill[]>;
+  skill: AngularFirestoreDocument<IntCvSkill>;
 
   skillGruppeCollection: AngularFirestoreCollection<SkillGruppe>;
   skillGruppe: Observable<SkillGruppe[]>;
 
   skillAdminCollection: AngularFirestoreCollection<IntCvSkill>;
   skillAdmin: Observable<IntCvSkill[]>;
+
+  filterWert: 'Entwicklung';
 
   adminFilter: number;
 
@@ -51,6 +54,11 @@ export class CvServiceService {
 
   addSkill(cvSkill: IntCvSkill) {
     this.cvSkillCollection.add(cvSkill);
+  }
+
+  deleteSkill(skill: IntCvSkill){
+    this.skill = this.afs.doc(`cv-skill/${skill.id}`);
+    this.skill.delete();
   }
 
 
