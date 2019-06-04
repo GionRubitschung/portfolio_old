@@ -27,11 +27,11 @@ import { SkillsComponent } from './content/content-components/skills/skills.comp
 import { MenubarComponent } from './content/menubar/menubar.component';
 import { UnterlagenComponent } from './content/content-components/unterlagen/unterlagen.component';
 import { LebenslaufComponent } from './content/content-components/infos/lebenslauf/lebenslauf.component';
-import { UeberMichComponent } from './content/content-components/infos/ueber-mich/ueber-mich.component';
 import { LoginComponent } from './authentification/login/login.component';
 import { AdministratorComponent } from './admin-bereich/administrator/administrator.component';
 import { SkillsAddComponent } from './admin-bereich/skills-add/skills-add.component';
 import { AdministratorMenubarComponent } from './admin-bereich/administrator-menubar/administrator-menubar.component';
+import { BottomYeetComponent } from './content/content-components/home/bottom-yeet/bottom-yeet.component';
 
 
 
@@ -44,7 +44,6 @@ import { AdministratorMenubarComponent } from './admin-bereich/administrator-men
     HomeComponent,
     UnterlagenComponent,
     LebenslaufComponent,
-    UeberMichComponent,
     LoginComponent,
     AdministratorComponent,
     SkillsAddComponent,
@@ -54,6 +53,7 @@ import { AdministratorMenubarComponent } from './admin-bereich/administrator-men
     UploaderComponent,
     UploadTaskComponent,
     SkillTableComponent,
+    BottomYeetComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,8 +75,12 @@ import { AdministratorMenubarComponent } from './admin-bereich/administrator-men
     CvServiceService,
     AuthGuard,
     AuthService,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    BottomYeetComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    BottomYeetComponent
+  ]
 })
 export class AppModule { }

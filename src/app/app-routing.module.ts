@@ -17,10 +17,8 @@ const routes: Routes = [
   {path: 'bewerbungsunterlagen', component: UnterlagenComponent},
   {path: 'login', component: LoginComponent},
   {path: 'cv', component: LebenslaufComponent},
-  {path: 'admin', component: AdministratorComponent, canActivate: [AuthGuard], children: [
-    {path: 'skills-add', component: SkillsAddComponent},
-    {path: 'upload-unterlagen', component: UploaderComponent}
-  ]}
+  {path: 'admin', component: AdministratorComponent, canActivate: [AuthGuard]},
+  {path: 'admin/skills-add', component: SkillsAddComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

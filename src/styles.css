@@ -1,15 +1,29 @@
-@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #303030;
+  background-color: #f0f0f0;
 }
 
 .link {
   text-decoration: none;
 }
 
-* {
-  color: #F6F6F6;
+.outlet {
+  color:#303030;
+}
+
+*{
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.white{
+  color: #f0f0f0;
+}
+
+.center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

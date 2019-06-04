@@ -27,7 +27,7 @@ export class CvServiceService {
   constructor(public afs: AngularFirestore) { }
 
   fetchingData() {
-    this.cvSkillCollection = this.afs.collection('cv-skill');
+    this.cvSkillCollection = this.afs.collection('cv-skill', ref => ref.orderBy('skillwert', 'desc'));
 
     this.cvSkill = this.cvSkillCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {

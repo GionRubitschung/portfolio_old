@@ -4,20 +4,24 @@
   justify-content: space-evenly;
 }
 
+.background{
+  background: url("../../../bilder/background.jpg") no-repeat fixed;
+}
+
 .flex2, .ueber-mich{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: calc(100vh - 64px);
   width: 50%;
 }
 
-.bewerbungsunterlagen{
-  margin: 0 .75%;
+#projektsearch{
+  width: 100%;
 }
 
-.flex-cv{
-  margin: .75%;
+.bewerbungsunterlagen, .skills, .flex-cv{
+  margin: .75% .75% 0 .75%;
 }
 
 .main-title{
@@ -51,6 +55,10 @@
   width: 48%;
 }
 
+.title{
+  font-size: 110%;
+}
+
 .button-link{
   display: flex;
   flex-direction: row;
@@ -65,8 +73,9 @@
     display: inline;
     margin: 0 auto;
   }
-  .email{
-    display: none;
+  .flex-cv{
+    margin: 0;
+    padding: .75% .75% 0 .75%;
   }
 }
 

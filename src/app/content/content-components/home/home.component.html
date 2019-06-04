@@ -1,54 +1,121 @@
-<content class="flex-home">
-  <section class="ueber-mich">
-    <app-ueber-mich></app-ueber-mich>
-    <div class="flex-cv" *ngFor="let data of DATA">
-        <mat-card class="simpson">
-          <p class="main-title">Lebenslauf</p>
-
-          <p class="data">Persönliche Angaben</p>
-          <mat-card-content class="homer">
-            <div class="inside">
-                <div class="info">Name:</div> <div class="info">{{data.Name}}</div>
-            </div>
-            <div class="inside">
-                <div class="info">Adresse Geschäftlich</div> <div class="info">{{data.Adresse.Geschaeftlich.Strasse}}<br>{{data.Adresse.Geschaeftlich.Ort}}</div>
-            </div>
-            <div class="inside">
-                <div class="info">Adresse Privat</div> <div class="info">{{data.Adresse.Privat.Strasse}}<br>{{data.Adresse.Privat.Ort}}</div>
-            </div>
-            <div class="inside">
-              <div class="info email">eMail</div>
-              <div class="info link email"><a href="mailto:gion.rubitschung@swisscom.com">{{data.eMail}}</a></div>
-            </div>
-            <div class="inside">
-              <div class="info">Telefonnummer</div>
-              <div class="info">{{data.Nummer}}</div>
-            </div>
-            <div class="inside">
-              <div class="info">Geburtsdatum</div>
-              <div class="info">{{data.Geburtsdatum}}</div>
-            </div>
-            <div class="inside">
-                <div class="info link" [routerLink]="'/cv'">Zum kompletten Lebenslauf</div>
-                <div class="info link">Lebenslauf herunterladen</div>
-              </div>
-          </mat-card-content>
-        </mat-card>
+<div class="background">
+  <content class="flex-home">
+    <section class="ueber-mich">
+      <div *ngIf="ICH.length > 0; else keinIch">
+        <div class="flex-cv" *ngFor="let ich of ICH">
+          <mat-card class="simpson">
+            <p class="main-title">{{ ich.titel }}</p>
+            <mat-card-content>
+              <p class="title">{{ ich.text }}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
 
-  </section>
-  <div class="flex2">
-    <section class="bewerbungsunterlagen">
-      <h1>Hier findest du alle meine Bewerbungsunterlagen</h1>
-      <mat-card>
-        <p>
-          Diese Feature wird bald verfügbar sein!
-        </p>
-      </mat-card>
+      <ng-template #keinIch>
+        <app-data-loader></app-data-loader>
+      </ng-template>
+
+      <div *ngIf="DATA.length > 0; else keinData">
+        <div class="flex-cv" *ngFor="let data of DATA">
+          <mat-card class="simpson">
+            <p class="main-title">Lebenslauf</p>
+
+            <p class="data">Persönliche Angaben</p>
+            <mat-card-content class="homer">
+              <div class="inside">
+                <div class="info">Name:</div>
+                <div class="info">{{ data.Name }}</div>
+              </div>
+              <div class="inside">
+                <div class="info">Adresse Geschäftlich</div>
+                <div class="info">
+                  {{ data.Adresse.Geschaeftlich.Strasse }}<br />{{
+                    data.Adresse.Geschaeftlich.Ort
+                  }}
+                </div>
+              </div>
+              <div class="inside">
+                <div class="info">Adresse Privat</div>
+                <div class="info">
+                  {{ data.Adresse.Privat.Strasse }}<br />{{
+                    data.Adresse.Privat.Ort
+                  }}
+                </div>
+              </div>
+              <div class="inside">
+                <div class="info email">Email Adresse</div>
+                <div class="info link email">
+                  <a href="mailto:gion.rubitschung@swisscom.com">{{
+                    data.eMail
+                  }}</a>
+                </div>
+              </div>
+              <div class="inside">
+                <div class="info">Telefonnummer</div>
+                <div class="info">{{ data.Nummer }}</div>
+              </div>
+              <div class="inside">
+                <div class="info">Geburtsdatum</div>
+                <div class="info">{{ data.Geburtsdatum }}</div>
+              </div>
+              <div class="inside">
+                <div class="info link" [routerLink]="'/cv'">
+                  Zum kompletten Lebenslauf
+                </div>
+                <div class="info link">
+                  <a
+                    href="https://firebasestorage.googleapis.com/v0/b/gion-rubitschung.appspot.com/o/bewerbungsunterlagen%2F2_Lehrjahr%2FLebenslauf_Gion_Rubitschung.pdf?alt=media&token=a22b4089-5028-49b2-91a2-87d8559de844"
+                    download="Lebenslauf_Gion_Rubitschung"
+                    target="_blank"
+                    >Lebenslauf in PDF ansicht</a
+                  >
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <ng-template #keinData>
+        <app-data-loader></app-data-loader>
+      </ng-template>
     </section>
-    <section class="skills">
-      <h1>Meine Skills</h1>
-      <app-skills></app-skills>
-    </section>
-  </div>
-</content>
+    <div class="flex2">
+      <section class="bewerbungsunterlagen">
+        <mat-card class="simpson">
+          <p class="main-title">Bewerbungsunterlagen</p>
+          <mat-card-content>
+            <p class="title">
+              Um die Bewerbungsunterlagen für ein Projekt zu erhalten, gebe den
+              genau selben Namen ein wie dieses im Marketplace ausgeschrieben
+              ist. Danach kannst du die Bewerbungsunterlagen herunterladen.
+            </p>
+            <form (submit)="openBottomYeet()">
+              <mat-form-field id="projektsearch">
+                <input
+                  matInput
+                  type="text"
+                  name="projekt"
+                  placeholder="Projektname"
+                  [(ngModel)]="projekt"
+                />
+              </mat-form-field>
+              <div class="center">
+                <button mat-raised-button (click)="openBottomYeet()">
+                  Bewerbungsunterlagen herunterladen
+                </button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </section>
+      <section class="skills">
+        <mat-card class="simspon">
+          <div class="main-title">Skills</div>
+          <app-skills></app-skills>
+        </mat-card>
+      </section>
+    </div>
+  </content>
+</div>

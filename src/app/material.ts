@@ -13,6 +13,9 @@ import {MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import {MatSelectModule} from '@angular/material/select';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatListModule} from '@angular/material/list';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   imports: [
@@ -32,7 +35,10 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatTableModule,
     MatSortModule,
     MatSelectModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatListModule,
+    MatChipsModule
   ],
   exports: [
     MatButtonModule,
@@ -51,7 +57,10 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatTableModule,
     MatSortModule,
     MatSelectModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatListModule,
+    MatChipsModule
   ]
 })
 

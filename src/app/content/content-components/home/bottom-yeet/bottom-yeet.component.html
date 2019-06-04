@@ -1,0 +1,15 @@
+<div *ngIf="FILES.length > 0; else noFiles">
+  <div *ngFor="let file of FILES">
+    <mat-nav-list>
+      <a href="{{ file.downloadUrl }}" download="{{ file.name }}" mat-list-item>
+        <span mat-line>Download</span>
+        <span mat-line>{{ file.name }}</span>
+      </a>
+    </mat-nav-list>
+  </div>
+</div>
+<ng-template #noFiles>
+  <mat-chip-list class="center">
+    <mat-chip color="warn" selected>Kein Projekt gefunden!</mat-chip>
+  </mat-chip-list>
+</ng-template>

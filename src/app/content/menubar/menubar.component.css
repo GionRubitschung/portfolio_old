@@ -1,5 +1,6 @@
 .menubar{
   margin-bottom: 0;
+  color: #f0f0f0;
 }
 
 .active {
@@ -11,8 +12,43 @@
   background-color: rgb(106, 245, 178);
 }
 
+mat-expansion-panel{
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #3F51B5 !important;
+  color: #f0f0f0;
+}
+
+mat-expansion-panel-header{
+  background-color: #3F51B5 !important;
+}
+
 mat-toolbar-row{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.responsive{
+  display: none;
+}
+
+.responsive-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px){
+  .menubar{
+    display: none;
+  }
+  .responsive{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .material-icons{
+    margin: auto;
+  }
 }

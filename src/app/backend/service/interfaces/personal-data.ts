@@ -13,4 +13,19 @@ export interface PersonalData {
       Strasse: string;
     }
   };
+  schulen: [
+    {
+    schule: string;
+    von_bis: string;
+    typ: string
+    }
+  ];
+  sprachkenntnisse: [
+    {
+      sprache: string;
+      niveau: string;
+    }
+  ];
+  schultagBFS: string;
+  schultagBMS: string;
 }

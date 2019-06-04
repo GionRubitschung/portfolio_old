@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UeberMichComponent } from './ueber-mich.component';
+import { BottomYeetComponent } from './bottom-yeet.component';
 
-describe('UeberMichComponent', () => {
-  let component: UeberMichComponent;
-  let fixture: ComponentFixture<UeberMichComponent>;
+describe('BottomYeetComponent', () => {
+  let component: BottomYeetComponent;
+  let fixture: ComponentFixture<BottomYeetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UeberMichComponent ]
+      declarations: [ BottomYeetComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UeberMichComponent);
+    fixture = TestBed.createComponent(BottomYeetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

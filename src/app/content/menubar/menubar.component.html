@@ -18,40 +18,45 @@
     </button>
     <button
       mat-button
-      [routerLink]="'skills'"
+      [routerLink]="'admin'"
       [routerLinkActive]="'active'"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      Qualifikationen
+      Admin
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-expansion-panel class="responsive" hideToggle="true">
+  <mat-expansion-panel-header [collapsedHeight]="'64px'">
+      <i class="material-icons">
+        menu
+      </i>
+  </mat-expansion-panel-header>
+  <div class="responsive-flex">
+    <button
+      mat-button
+      [routerLink]="'home'"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Home
     </button>
     <button
       mat-button
-      [routerLink]="'bewerbungsunterlagen'"
+      [routerLink]="'cv'"
       [routerLinkActive]="'active'"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      Bewerbungsunterlagen
+      Lebenslauf
     </button>
-    <button mat-button class="login-menubar" [matMenuTriggerFor]="admin">
-      Admin bereich
+    <button
+      mat-button
+      [routerLink]="'admin'"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Admin
     </button>
-    <mat-menu #admin="matMenu">
-      <button
-        mat-menu-item
-        [routerLink]="'admin'"
-        [routerLinkActive]="'active'"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        Home
-      </button>
-      <button
-        mat-menu-item
-        [routerLink]="'admin/skills-add'"
-        [routerLinkActive]="'active'"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        Skills hinzufügen
-      </button>
-    </mat-menu>
-  </mat-toolbar-row>
-</mat-toolbar>
+  </div>
+</mat-expansion-panel>

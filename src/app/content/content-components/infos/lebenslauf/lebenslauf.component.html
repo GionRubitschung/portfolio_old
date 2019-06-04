@@ -1,30 +1,131 @@
-<div class="flex-cv" *ngFor="let data of DATA">
-  <mat-card class="simpson">
-    <p class="main-title">Lebenslauf</p>
+<div class="background">
+  <div class="flex-cv" *ngFor="let data of DATA">
+    <mat-card class="simpson">
+      <p class="main-title">Lebenslauf</p>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <p class="data">Persönliche Angaben</p>
+        </mat-expansion-panel-header>
+        <mat-card-content class="homer">
+          <div class="box">
+            <div class="inside">
+              <div class="info">Name:</div>
+              <div class="info">{{ data.Name }}</div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="inside">
+              <div class="info">Adresse Geschäftlich</div>
+              <div class="info">
+                {{ data.Adresse.Geschaeftlich.Strasse }}<br />{{
+                  data.Adresse.Geschaeftlich.Ort
+                }}
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="inside">
+              <div class="info">Adresse Privat</div>
+              <div class="info">
+                {{ data.Adresse.Privat.Strasse }}<br />{{
+                  data.Adresse.Privat.Ort
+                }}
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="inside">
+              <div class="info">Email Adresse</div>
+              <div class="info link">
+                <a href="mailto:gion.rubitschung@swisscom.com">{{
+                  data.eMail
+                }}</a>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="inside">
+              <div class="info">Telefonnummer</div>
+              <div class="info">{{ data.Nummer }}</div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="inside">
+              <div class="info">Geburtsdatum</div>
+              <div class="info">{{ data.Geburtsdatum }}</div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-expansion-panel>
 
-    <p class="data">Persönliche Angaben</p>
-    <mat-card-content class="homer">
-      <div class="inside">
-          <div class="info">Name:</div> <div class="info">{{data.Name}}</div>
-      </div>
-      <div class="inside">
-          <div class="info">Adresse Geschäftlich</div> <div class="info">{{data.Adresse.Geschaeftlich.Strasse}}<br>{{data.Adresse.Geschaeftlich.Ort}}</div>
-      </div>
-      <div class="inside">
-          <div class="info">Adresse Privat</div> <div class="info">{{data.Adresse.Privat.Strasse}}<br>{{data.Adresse.Privat.Ort}}</div>
-      </div>
-      <div class="inside">
-        <div class="info">eMail</div>
-        <div class="info link"><a href="mailto:gion.rubitschung@swisscom.com">{{data.eMail}}</a></div>
-      </div>
-      <div class="inside">
-        <div class="info">Telefonnummer</div>
-        <div class="info">{{data.Nummer}}</div>
-      </div>
-      <div class="inside">
-        <div class="info">Geburtsdatum</div>
-        <div class="info">{{data.Geburtsdatum}}</div>
-      </div>
-    </mat-card-content>
-  </mat-card>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <p class="data">Projekte</p>
+        </mat-expansion-panel-header>
+        <mat-card-content class="homer" *ngFor="let projekt of PROJEKTE">
+          <div class="box">
+            <div class="title">{{ projekt.Projektname }}</div>
+            <div class="inside">
+              <div class="info">Dauer</div>
+              <div class="info">{{ projekt.von_bis }}</div>
+            </div>
+            <div class="inside">
+              <div class="info">Erlernte Skills</div>
+              <div class="info">
+                <div
+                  class="gelerntes"
+                  *ngFor="let gelerntes of projekt.Gelerntes"
+                >
+                  - {{ gelerntes }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <p class="data">Schulbildung</p>
+        </mat-expansion-panel-header>
+        <mat-card-content class="homer" *ngFor="let schule of data.schulen">
+          <div class="box">
+            <div class="inside">
+              <div class="info">{{ schule.schule }}</div>
+              <div class="info">{{ schule.von_bis }}</div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <p class="data">Sonstiges</p>
+        </mat-expansion-panel-header>
+        <mat-card-content class="homer">
+          <div class="title">Sprachkenntnisse</div>
+          <div *ngFor="let sprache of data.sprachkenntnisse">
+            <div class="box">
+              <div class="inside">
+                <div class="info">{{ sprache.sprache }}</div>
+                <div class="info">{{ sprache.niveau }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="title">Schultage</div>
+            <div class="inside">
+              <div class="info">Berufsschule</div>
+              <div class="info">{{ data.schultagBFS }}</div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="inside">
+              <div class="info">Berufsmaturität</div>
+              <div class="info">{{ data.schultagBMS }}</div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-expansion-panel>
+    </mat-card>
+  </div>
 </div>
