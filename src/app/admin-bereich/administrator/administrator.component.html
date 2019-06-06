@@ -1,2 +1,8 @@
-<app-administrator-menubar></app-administrator-menubar>
-
+<mat-drawer-container [hasBackdrop]="true">
+  <mat-drawer #drawer [mode]="'over'">
+    <app-administrator-menubar></app-administrator-menubar>
+  </mat-drawer>
+  <mat-drawer-container>
+    <button mat-raised-button (click)="drawer.toggle()">Menubar</button>
+  </mat-drawer-container>
+</mat-drawer-container>

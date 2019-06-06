@@ -35,6 +35,14 @@
 .link{
   cursor: pointer;
   text-decoration: underline;
+  color: #303030;
+  transition-duration: .5s;
+}
+
+.link:hover{
+  color: blue;
+  text-decoration: none;
+  transition-duration: .5s;
 }
 
 .homer{

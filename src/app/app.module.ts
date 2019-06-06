@@ -32,6 +32,9 @@ import { AdministratorComponent } from './admin-bereich/administrator/administra
 import { SkillsAddComponent } from './admin-bereich/skills-add/skills-add.component';
 import { AdministratorMenubarComponent } from './admin-bereich/administrator-menubar/administrator-menubar.component';
 import { BottomYeetComponent } from './content/content-components/home/bottom-yeet/bottom-yeet.component';
+import { ContactComponent } from './content/content-components/contact/contact.component';
+import { ContactMessagesComponent } from './admin-bereich/contact-messages/contact-messages.component';
+import { AdminRouterOutletComponent } from './admin-bereich/admin-router-outlet/admin-router-outlet.component';
 
 
 
@@ -54,6 +57,9 @@ import { BottomYeetComponent } from './content/content-components/home/bottom-ye
     UploadTaskComponent,
     SkillTableComponent,
     BottomYeetComponent,
+    ContactComponent,
+    ContactMessagesComponent,
+    AdminRouterOutletComponent,
   ],
   imports: [
     BrowserModule,

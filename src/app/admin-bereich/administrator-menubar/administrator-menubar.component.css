@@ -1,15 +1,54 @@
-.menubar {
+.menubar{
+  margin-bottom: 0;
+  color: #f0f0f0;
+}
+
+.active {
+  background-color: rgb(105, 240, 174);
+  color: #303030;
+}
+
+.active:hover {
+  background-color: rgb(106, 245, 178);
+}
+
+mat-expansion-panel{
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #3F51B5 !important;
+  color: #f0f0f0;
+}
+
+mat-expansion-panel-header{
+  background-color: #3F51B5 !important;
+}
+
+mat-toolbar-row{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: rgba(123, 31, 162, 0.8);
 }
 
-.button-admin.active {
-  background-color: #69F0AE;
-  color: black;
+.responsive{
+  display: none;
 }
 
-.button-admin {
-  background-color: rgba(123, 31, 162, 0);
+.responsive-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px){
+  .menubar{
+    display: none;
+  }
+  .responsive{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .material-icons{
+    margin: auto;
+  }
 }
