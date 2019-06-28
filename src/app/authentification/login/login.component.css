@@ -26,6 +26,7 @@ button {
 }
 
 .login-cont{
-  background-color: #f8f8f8;
+  background: rgb(63,137,181);
+  background: linear-gradient(106deg, rgba(63,137,181,0.5746673669467788) 0%, rgba(149,0,255,0.5438550420168067) 100%);
   height: calc(100vh - 64px);
 }
