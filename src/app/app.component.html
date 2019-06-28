@@ -1,4 +1,17 @@
-<app-menubar></app-menubar>
-<div class="outlet">
+<mat-drawer-container class="yigga" autosize>
+  <mat-drawer #drawer class="homer" mode="side">
+    <app-menubar></app-menubar>
+  </mat-drawer>
+
+  <div class="yikka">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <i class="material-icons">
+        menu
+      </i>
+    </button>
+  </div>
+
+  <div class="outlet">
     <router-outlet class="mat-body"></router-outlet>
-</div>
+  </div>
+</mat-drawer-container>

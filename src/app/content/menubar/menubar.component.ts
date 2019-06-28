@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenubarComponent implements OnInit {
 
+  hamburger: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  collpseBurger() {
+    this.hamburger = document.querySelector('.hamburger');
+    this.hamburger.addEventListener('click', function() {
+      this.hamburger.classList.toggle('is-active');
+    });
   }
 
 }

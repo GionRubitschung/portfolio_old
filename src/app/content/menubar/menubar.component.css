@@ -4,8 +4,7 @@
 }
 
 button{
-  width: 5vw;
-  margin: 0 calc(1% - 2px);
+  margin: calc(1% - 2px) 0;
 }
 
 .active {
@@ -41,7 +40,9 @@ mat-toolbar-row{
 .responsive-flex{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  background-color: #3F51B5;
+  height: 100%;
 }
 
 @media screen and (max-width: 600px){
