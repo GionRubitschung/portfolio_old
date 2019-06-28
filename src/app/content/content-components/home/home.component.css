@@ -83,3 +83,9 @@
     width: 40%;
   }
 }
+
+@media screen and (max-width: 460px){
+  .respon{
+    width: 80%;
+  }
+}

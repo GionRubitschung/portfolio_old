@@ -1,5 +1,105 @@
-.homer{
-  width: 23%;
-  background-color: #3F51B5;
+.homer {
+  width: 13%;
+  background-color: #3f51b5;
   padding: 1%;
+}
+
+.resp {
+  display: none;
+}
+
+.menubar {
+  margin-bottom: 0;
+  color: #f0f0f0;
+}
+
+
+.simpsom {
+  margin: calc(1% - 2px) 0;
+}
+
+.active {
+  background-color: rgb(255, 255, 255);
+  color: #303030;
+}
+
+.active:hover {
+  background-color: rgb(250, 250, 250);
+}
+
+mat-expansion-panel {
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #3f51b5 !important;
+  color: #f0f0f0;
+}
+
+mat-expansion-panel-header {
+  background-color: #3f51b5 !important;
+}
+
+mat-toolbar-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.responsive {
+  display: none;
+}
+
+.responsive-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #3f51b5;
+  /* height: 100%; */
+}
+
+@media screen and (max-width: 900px) {
+  .homer {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .homer {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .homer {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .homer {
+    width: 100%;
+  }
+  .resp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .menubar {
+    display: none;
+  }
+  .responsive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  mat-toolbar-row {
+    justify-content: center;
+  }
+  .material-icons {
+    margin: auto;
+  }
+  .simpsom {
+    width: calc(100% - (1% - 2px));
+    margin: calc(1% - 2px);
+    text-align: left;
+  }
 }

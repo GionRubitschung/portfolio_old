@@ -46,7 +46,7 @@
               <div class="inside">
                 <div class="info email">Email Adresse</div>
                 <div class="info email">
-                  <a href="mailto:gion.rubitschung@swisscom.com" class="link">{{
+                  <a [href]="'mailto:' + data.eMail" class="link">{{
                     data.eMail
                   }}</a>
                 </div>
@@ -61,7 +61,7 @@
               </div>
               <div class="inside">
                 <div class="info">
-                  <a [routerLink]="'/cv'" class="link">Zum kompletten Lebenslauf</a>
+                  <a [routerLink]="'/cv'" class="link respon">Zum kompletten Lebenslauf</a>
                 </div>
                 <div class="info">
                   <a
