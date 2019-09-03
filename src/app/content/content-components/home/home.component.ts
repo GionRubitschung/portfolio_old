@@ -43,11 +43,8 @@ export class HomeComponent implements OnInit {
     this.bottomSheet.open(BottomYeetComponent);
   }
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+  canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     if (this.authService.isLoggedIn !== true) {
-      // this.router.navigate(['login']);
       return false;
     }
     return true;
