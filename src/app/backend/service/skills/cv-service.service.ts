@@ -56,6 +56,11 @@ export class CvServiceService {
     this.cvSkillCollection.add(cvSkill);
   }
 
+  updateSkill(cvSkill: IntCvSkill) {
+    this.skill = this.afs.doc(`cv-skill/${cvSkill.id}`);
+    this.skill.update(cvSkill);
+  }
+
   deleteSkill(skill: IntCvSkill){
     this.skill = this.afs.doc(`cv-skill/${skill.id}`);
     this.skill.delete();

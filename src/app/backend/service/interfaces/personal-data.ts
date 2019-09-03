@@ -1,4 +1,5 @@
 export interface PersonalData {
+  id: string;
   Name: string;
   Geburtsdatum: string;
   eMail: string;
