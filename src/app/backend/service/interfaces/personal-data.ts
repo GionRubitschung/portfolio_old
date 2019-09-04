@@ -17,7 +17,6 @@ export interface PersonalData {
     {
     schule: string;
     von_bis: string;
-    typ: string
     }
   ];
   sprachkenntnisse: [

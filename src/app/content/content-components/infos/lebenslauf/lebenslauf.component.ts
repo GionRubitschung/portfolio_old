@@ -14,6 +14,8 @@ export class LebenslaufComponent implements OnInit {
 
   PROJEKTE: Projekt[] = [];
 
+  SCHOOLS: any = [];
+
   constructor(public dataService: LebenslaufService) { }
 
   ngOnInit() {
@@ -23,6 +25,10 @@ export class LebenslaufComponent implements OnInit {
 
     this.dataService.getProjekte().subscribe(projekt => {
       this.PROJEKTE = projekt;
+    });
+
+    this.dataService.getSchools().subscribe(school => {
+      this.SCHOOLS = school;
     })
   }
 

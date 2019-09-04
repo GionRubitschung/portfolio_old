@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { PersonalData } from '../interfaces/personal-data';
 import { Projekt } from '../interfaces/projekt';
 import { AboutMe } from '../interfaces/about-me';
+import { School } from '../interfaces/school';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,9 @@ export class LebenslaufService {
   projektCollection: AngularFirestoreCollection<Projekt>;
   projekt: Observable<Projekt[]>;
 
+  schoolCollection: AngularFirestoreCollection<School>;
+  school: Observable<School[]>;
+
   ichCollection: AngularFirestoreCollection<AboutMe>;
   ich: Observable<AboutMe[]>;
 
@@ -24,12 +28,14 @@ export class LebenslaufService {
 
   fetchingData() {
     this.dataCollection = this.afs.collection('personal_data');
-    this.projektCollection = this.afs.collection('projekte', ref => ref.orderBy('Startdatum', 'asc'));
+    this.projektCollection = this.afs.collection('projekte', ref => ref.orderBy('Startdatum', 'desc'));
     this.ichCollection = this.afs.collection('ueber-mich');
+    this.schoolCollection = this.afs.collection('schools');
 
     this.data = this.dataCollection.valueChanges();
     this.projekt = this.projektCollection.valueChanges();
     this.ich = this.ichCollection.valueChanges();
+    this.school = this.schoolCollection.valueChanges();
   }
 
   getData() {
@@ -45,5 +51,10 @@ export class LebenslaufService {
   getIch() {
     this.fetchingData();
     return this.ich;
+  }
+
+  getSchools() {
+    this.fetchingData();
+    return this.school;
   }
 }
