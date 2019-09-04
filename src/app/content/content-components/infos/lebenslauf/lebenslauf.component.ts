@@ -29,7 +29,7 @@ export class LebenslaufComponent implements OnInit {
 
     this.dataService.getSchools().subscribe(school => {
       this.SCHOOLS = school;
-    })
+    });
   }
 
 }
