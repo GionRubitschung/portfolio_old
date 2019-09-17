@@ -24,7 +24,7 @@ export class LebenslaufService {
 
   fetchingData() {
     this.dataCollection = this.afs.collection('personal_data');
-    this.projektCollection = this.afs.collection('projekte', ref => ref.orderBy('Startdatum', 'asc'));
+    this.projektCollection = this.afs.collection('projekte', ref => ref.orderBy('Startdatum', 'desc'));
     this.ichCollection = this.afs.collection('ueber-mich');
 
     this.data = this.dataCollection.valueChanges();

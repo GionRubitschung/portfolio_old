@@ -89,3 +89,10 @@
     width: 80%;
   }
 }
+
+.admin-skills{
+  margin-bottom: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

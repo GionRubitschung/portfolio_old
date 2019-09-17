@@ -1,7 +1,7 @@
 <mat-drawer-container class="example-container">
   <mat-drawer-content>
     <div *ngIf="SKILLS?.length > 0; else noItem">
-      <div *ngFor="let skill of SKILLS | filterBy:['skillGruppe']:filterWert">
+      <div *ngFor="let skill of SKILLS | filterBy: ['skillGruppe']:filterWert">
         <div class="skill">
           <mat-accordion>
             <mat-expansion-panel>
